@@ -21,8 +21,8 @@ def index():
 @app.route("/scrape")
 def scrape():
     mars = client.db.mars
-    mars_scraping = scrape_mars.scrape()
-    mars.update({}, mars_scraping, upsert=True)
+    mars_data = scrape_mars.scrape()
+    mars.update({}, mars_data, upsert=True)
     return redirect("/", code=302)
 
 if __name__ == "__main__":
