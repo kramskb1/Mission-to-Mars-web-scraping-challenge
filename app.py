@@ -21,7 +21,7 @@ def index():
 
 @app.route('/scrape')
 def scrape():
-    mars = mongo.db.mars
+    mars = mongo.db.mars_data.find_one()
     mars_data = scrape_mars.scrape()
     mars.update( {},mars_data,upsert=True) 
     return redirect("/", code=302)
