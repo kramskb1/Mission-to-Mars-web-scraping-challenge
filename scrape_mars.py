@@ -11,7 +11,8 @@ import time
 
 def scrape_info():
 
-    browser=Browser('chrome')
+    executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
+    browser = Browser('chrome', **executable_path)
     mars={}
 
 
